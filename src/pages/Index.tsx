@@ -69,11 +69,12 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">А</span>
-              </div>
-              <span className="text-2xl font-bold text-secondary">АРКОН</span>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/files/7be3675e-5e41-442a-b8b2-f3d2be176a08.jpeg" 
+                alt="АРКОН" 
+                className="h-12 w-auto"
+              />
             </div>
             <div className="hidden md:flex gap-8">
               {[
@@ -348,11 +349,12 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">А</span>
-                </div>
-                <span className="text-xl font-bold">АРКОН</span>
+              <div className="mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/7be3675e-5e41-442a-b8b2-f3d2be176a08.jpeg" 
+                  alt="АРКОН" 
+                  className="h-16 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-white/70 text-sm">
                 Строительная компания полного цикла
