@@ -41,19 +41,22 @@ const Index = () => {
       title: "ЖК «Северный»",
       category: "Жилой комплекс",
       area: "45 000 м²",
-      year: "2023"
+      year: "2023",
+      image: "https://cdn.poehali.dev/projects/f98a8c08-f043-4bd6-9585-8294862b91a8/files/93b03d61-1fc6-4a68-b0e9-c491cb7ae972.jpg"
     },
     {
       title: "Производственный корпус",
       category: "Промышленное здание",
       area: "12 000 м²",
-      year: "2023"
+      year: "2023",
+      image: "https://cdn.poehali.dev/projects/f98a8c08-f043-4bd6-9585-8294862b91a8/files/99d45043-0336-4d4f-99c0-97a4b9f5c20d.jpg"
     },
     {
       title: "Бизнес-центр «Атлант»",
       category: "Офисное здание",
       area: "8 500 м²",
-      year: "2022"
+      year: "2022",
+      image: "https://cdn.poehali.dev/projects/f98a8c08-f043-4bd6-9585-8294862b91a8/files/8532c601-ccec-45ee-a595-a28f3d94cfdc.jpg"
     }
   ];
 
@@ -224,10 +227,15 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all">
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-accent/30 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-secondary/60 group-hover:bg-secondary/40 transition-all"></div>
+                <div className="aspect-[4/3] relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <div className="text-sm font-semibold opacity-80">{project.category}</div>
+                    <div className="text-sm font-semibold">{project.category}</div>
                   </div>
                 </div>
                 <div className="p-4 md:p-6">
