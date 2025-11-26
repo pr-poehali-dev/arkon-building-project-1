@@ -67,16 +67,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
                 src="https://cdn.poehali.dev/files/7be3675e-5e41-442a-b8b2-f3d2be176a08.jpeg" 
                 alt="АРКОН" 
-                className="h-12 w-auto"
+                className="h-14 md:h-16 w-auto"
               />
             </div>
-            <div className="hidden md:flex gap-8">
+            <div className="hidden lg:flex gap-8">
               {[
                 { id: "main", label: "Главная" },
                 { id: "about", label: "О компании" },
@@ -94,7 +94,14 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <Button className="hidden md:block">Оставить заявку</Button>
+            <Button className="hidden md:block" onClick={() => scrollToSection("contacts")}>Оставить заявку</Button>
+            <Button 
+              className="md:hidden" 
+              size="sm" 
+              onClick={() => scrollToSection("contacts")}
+            >
+              <Icon name="Phone" size={18} />
+            </Button>
           </div>
         </div>
       </nav>
@@ -111,18 +118,18 @@ const Index = () => {
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6 animate-fade-in">
               <span className="text-primary font-semibold text-sm">Строим будущее с 2008 года</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold text-secondary mb-6 leading-tight animate-fade-in">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-secondary mb-4 md:mb-6 leading-tight animate-fade-in">
               Инженерные решения<br />полного цикла
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-in">
+            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl animate-fade-in">
               Проектируем и строим объекты любой сложности — от жилых комплексов до промышленных предприятий
             </p>
-            <div className="flex gap-4 animate-fade-in">
-              <Button size="lg" className="text-lg px-8" onClick={() => scrollToSection("contacts")}>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-fade-in">
+              <Button size="lg" className="text-base md:text-lg px-6 md:px-8 w-full sm:w-auto" onClick={() => scrollToSection("contacts")}>
                 <Icon name="Phone" className="mr-2" size={20} />
                 Обсудить проект
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8" onClick={() => scrollToSection("projects")}>
+              <Button size="lg" variant="outline" className="text-base md:text-lg px-6 md:px-8 w-full sm:w-auto" onClick={() => scrollToSection("projects")}>
                 Наши проекты
               </Button>
             </div>
@@ -130,34 +137,34 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-secondary text-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="py-12 md:py-20 bg-secondary text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-5xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-white/80">{stat.label}</div>
+                <div className="text-3xl md:text-5xl font-bold text-primary mb-1 md:mb-2">{stat.value}</div>
+                <div className="text-sm md:text-base text-white/80">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section id="about" className="py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">О компании</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 md:mb-6">
                 Строим с умом и точностью
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
                 АРКОН — это команда профессионалов с 15-летним опытом в строительной индустрии. Мы специализируемся на комплексной реализации проектов: от инженерных изысканий до сдачи объекта под ключ.
               </p>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 Наш подход основан на применении передовых технологий проектирования (BIM), строгом контроле качества на всех этапах и соблюдении сроков строительства.
               </p>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-primary mt-1" size={24} />
                   <div>
@@ -174,47 +181,47 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <section id="services" className="py-12 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-16">
             <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Услуги</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 md:mb-4">
               Полный цикл строительства
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               От концепции до реализации — обеспечиваем комплексный подход к каждому проекту
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="p-8 hover:shadow-lg transition-all hover:-translate-y-1 border-2 hover:border-primary/20">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Icon name={service.icon} className="text-primary" size={28} />
+              <Card key={index} className="p-6 md:p-8 hover:shadow-lg transition-all hover:-translate-y-1 border-2 hover:border-primary/20">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                  <Icon name={service.icon} className="text-primary" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-3">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-secondary mb-2 md:mb-3">{service.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground">{service.description}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="projects" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <section id="projects" className="py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-8 md:mb-16">
             <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Проекты</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-3 md:mb-4">
               Реализованные объекты
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all">
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-accent/30 relative overflow-hidden">
@@ -223,8 +230,8 @@ const Index = () => {
                     <div className="text-sm font-semibold opacity-80">{project.category}</div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-secondary mb-4">{project.title}</h3>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold text-secondary mb-3 md:mb-4">{project.title}</h3>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Icon name="Maximize" size={16} />
@@ -242,31 +249,31 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="career" className="py-24 bg-secondary text-white">
-        <div className="container mx-auto px-6">
+      <section id="career" className="py-12 md:py-24 bg-secondary text-white">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Карьера</div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
               Присоединяйтесь к команде профессионалов
             </h2>
-            <p className="text-xl text-white/80 mb-12">
+            <p className="text-base md:text-xl text-white/80 mb-8 md:mb-12">
               Ищем талантливых инженеров, архитекторов и строителей для работы над масштабными проектами
             </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-6 bg-white/5 border-white/10 text-left">
-                <Icon name="TrendingUp" className="text-primary mb-4" size={32} />
-                <h3 className="text-xl font-bold mb-2">Развитие</h3>
-                <p className="text-white/70">Обучение и карьерный рост в компании</p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+              <Card className="p-4 md:p-6 bg-white/5 border-white/10 text-left">
+                <Icon name="TrendingUp" className="text-primary mb-3 md:mb-4" size={28} />
+                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Развитие</h3>
+                <p className="text-sm md:text-base text-white/70">Обучение и карьерный рост в компании</p>
               </Card>
-              <Card className="p-6 bg-white/5 border-white/10 text-left">
-                <Icon name="Users" className="text-primary mb-4" size={32} />
-                <h3 className="text-xl font-bold mb-2">Команда</h3>
-                <p className="text-white/70">Работа с лучшими специалистами отрасли</p>
+              <Card className="p-4 md:p-6 bg-white/5 border-white/10 text-left">
+                <Icon name="Users" className="text-primary mb-3 md:mb-4" size={28} />
+                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Команда</h3>
+                <p className="text-sm md:text-base text-white/70">Работа с лучшими специалистами отрасли</p>
               </Card>
-              <Card className="p-6 bg-white/5 border-white/10 text-left">
-                <Icon name="Award" className="text-primary mb-4" size={32} />
-                <h3 className="text-xl font-bold mb-2">Проекты</h3>
-                <p className="text-white/70">Участие в масштабных строительных проектах</p>
+              <Card className="p-4 md:p-6 bg-white/5 border-white/10 text-left sm:col-span-2 md:col-span-1">
+                <Icon name="Award" className="text-primary mb-3 md:mb-4" size={28} />
+                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">Проекты</h3>
+                <p className="text-sm md:text-base text-white/70">Участие в масштабных строительных проектах</p>
               </Card>
             </div>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -277,18 +284,18 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16">
+      <section id="contacts" className="py-12 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
             <div>
               <div className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Контакты</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-4 md:mb-6">
                 Обсудим ваш проект
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-8">
                 Оставьте заявку, и наш специалист свяжется с вами для обсуждения деталей
               </p>
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name="Phone" className="text-primary" size={20} />
@@ -318,8 +325,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <Card className="p-8 shadow-lg">
-              <form className="space-y-6">
+            <Card className="p-6 md:p-8 shadow-lg">
+              <form className="space-y-4 md:space-y-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">Ваше имя</label>
                   <Input placeholder="Иван Иванов" />
@@ -345,15 +352,15 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-secondary text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+      <footer className="bg-secondary text-white py-8 md:py-12">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
             <div>
-              <div className="mb-4">
+              <div className="mb-3 md:mb-4">
                 <img 
                   src="https://cdn.poehali.dev/files/7be3675e-5e41-442a-b8b2-f3d2be176a08.jpeg" 
                   alt="АРКОН" 
-                  className="h-16 w-auto brightness-0 invert"
+                  className="h-12 md:h-16 w-auto brightness-0 invert"
                 />
               </div>
               <p className="text-white/70 text-sm">
@@ -361,8 +368,8 @@ const Index = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Услуги</h4>
+              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-white/70">
                 <li>Проектирование</li>
                 <li>Строительство</li>
                 <li>Изыскания</li>
@@ -370,8 +377,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Компания</h4>
+              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-white/70">
                 <li>О компании</li>
                 <li>Проекты</li>
                 <li>Карьера</li>
@@ -379,15 +386,15 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
-              <ul className="space-y-2 text-sm text-white/70">
+              <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Контакты</h4>
+              <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-white/70">
                 <li>+7 (495) 123-45-67</li>
                 <li>info@arkon-build.ru</li>
                 <li>г. Москва</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
+          <div className="border-t border-white/10 pt-6 md:pt-8 text-center text-xs md:text-sm text-white/50">
             © 2024 АРКОН. Все права защищены.
           </div>
         </div>
